@@ -43,9 +43,9 @@ export function Hero() {
           transition={{ duration: 0.9, ease, delay: 0.18 }}
           className="mt-6 max-w-xl text-[15px] md:text-[16.5px] leading-[1.7] text-ivory/85 font-light"
         >
-          Traditional Thai therapy in the heart of Sta. Mesa — therapists trained
-          in Bangkok, oils warmed for the body, hours that meet Manila after
-          work and after midnight.
+          Traditional Thai therapy on North EDSA — therapists trained in
+          Bangkok, oils warmed for the body, hours that meet Quezon City
+          after work and after midnight.
         </motion.p>
 
         <motion.div
@@ -87,7 +87,7 @@ export function Hero() {
         {/* Tiny location pill, lower right on desktop */}
         <div className="mt-10 lg:mt-0 lg:absolute lg:right-10 lg:top-32 flex items-center gap-2 text-[11px] uppercase font-mono tracking-[0.22em] text-ivory/50">
           <MapPin size={12} aria-hidden />
-          Sta. Mesa · Manila · PH
+          North EDSA · Quezon City · PH
         </div>
       </div>
 

@@ -41,7 +41,7 @@ export function HouseStory() {
               Thai Royale began as a single room in 2003 and has, slowly and
               without much fanfare, become a national house of practice — thirty-
               five branches, hundreds of therapists, one trained-in-Bangkok
-              standard. Sta. Mesa is our newest room; built with the same tea
+              standard. North EDSA is our newest room; built with the same tea
               service, the same hot-towel ritual, the same insistence that
               every guest is greeted by name.
             </p>

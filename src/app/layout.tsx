@@ -37,10 +37,10 @@ export const metadata: Metadata = {
   },
   description: site.brand.description,
   keywords: [
-    "Thai massage Manila",
-    "spa Sta Mesa",
+    "Thai massage Quezon City",
+    "spa North EDSA",
     "Thai Royale Spa",
-    "couples massage Manila",
+    "couples massage Quezon City",
     "late night spa Manila",
     "Thai traditional massage",
   ],

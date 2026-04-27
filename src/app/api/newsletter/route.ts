@@ -53,7 +53,7 @@ export async function POST(request: Request) {
   }
 
   // Fallback: forward to inbox so signups aren't lost
-  const to = process.env.ENQUIRY_TO_EMAIL ?? "thairoyalespa.stamesa@gmail.com";
+  const to = process.env.ENQUIRY_TO_EMAIL ?? "thairoyalespa.northedsa@gmail.com";
   const from = process.env.ENQUIRY_FROM_EMAIL ?? "Thai Royale Spa <onboarding@resend.dev>";
   try {
     const res = await fetch("https://api.resend.com/emails", {

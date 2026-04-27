@@ -42,3 +42,5 @@ next-env.d.ts
 
 # QA screenshots — local artifacts, regenerate on demand
 /qa/
+
+.vercel

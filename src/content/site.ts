@@ -3,37 +3,40 @@
  * navigation, footer, social. Per-treatment / programme content lives in
  * `treatments.ts` (Phase B onwards).
  *
- * Content checked against the Sta. Mesa Manila Branch's Facebook page and
- * the parent Thai Royale Spa group. Anything marked `// TODO confirm` should
- * be verified with the client before launch.
+ * Content anchored to the North EDSA Quezon City Branch's Facebook page
+ * (https://www.facebook.com/profile.php?id=61584876023609) and the parent
+ * Thai Royale Spa group. Anything marked `// TODO confirm` should be
+ * verified with the client before launch.
  */
 
 export const site = {
   brand: {
     name: "Thai Royale Spa",
-    tagline: "Manila",
-    branch: "Sta. Mesa, Manila",
-    legalName: "Thai Royale Spa — Sta. Mesa Manila Branch",
+    tagline: "Quezon City",
+    branch: "North EDSA, Quezon City",
+    legalName: "Thai Royale Spa — North EDSA Quezon City Branch",
     tagPhrase: "An hour, restored.",
     description:
-      "A traditional Thai spa in Sta. Mesa, Manila. Therapists trained in Bangkok, oils warmed for the body, hours that meet the city after dark.",
+      "A traditional Thai spa on North EDSA, Quezon City. Therapists trained in Bangkok, oils warmed for the body, hours that meet the city after dark.",
   },
 
   contact: {
-    // Primary direct channel — late-night spa, Filipino market, mobile-first
+    // TODO confirm with client — placeholder uses the parent group's standard
+    // late-night number until the North EDSA branch shares its direct line.
     whatsapp: "+639669822000",
     whatsappDisplay: "+63 966 982 2000",
     phone: "+639669822000",
     phoneDisplay: "0966 982 2000",
-    email: "thairoyalespa.stamesa@gmail.com", // TODO confirm with client
-    facebook: "https://www.facebook.com/THAIROYALESPASTAMESA",
+    email: "thairoyalespa.northedsa@gmail.com", // TODO confirm with client
+    facebook: "https://www.facebook.com/profile.php?id=61584876023609",
     address: {
       // TODO confirm full street address with client
-      line1: "Sta. Mesa Branch",
-      line2: "Manila, Metro Manila",
+      line1: "North EDSA Branch",
+      line2: "Quezon City, Metro Manila",
       country: "Philippines",
     },
-    // Hours per the branch's announcement post
+    // Hours follow the parent group standard for Metro Manila branches —
+    // confirm with client for North EDSA specifics.
     hours: {
       label: "Daily, 2:00 PM — 2:00 AM",
       open: "14:00",
@@ -95,7 +98,7 @@ export const site = {
   social: [
     {
       label: "Facebook",
-      href: "https://www.facebook.com/THAIROYALESPASTAMESA",
+      href: "https://www.facebook.com/profile.php?id=61584876023609",
     },
     // TODO confirm Instagram handle
   ],

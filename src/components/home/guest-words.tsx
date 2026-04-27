@@ -6,8 +6,8 @@ import { Star } from "lucide-react";
 /**
  * Verbatim guest words — pulled from public Tripadvisor reviews of the
  * Thai Royale Spa group (Mandaluyong + Pasig branches), staff names
- * anonymised per playbook §10. Once Sta. Mesa accumulates its own
- * reviews we'll swap in branch-specific quotes.
+ * anonymised per playbook §10. Once the North EDSA branch accumulates
+ * its own reviews we'll swap in branch-specific quotes.
  */
 const QUOTES = [
   {

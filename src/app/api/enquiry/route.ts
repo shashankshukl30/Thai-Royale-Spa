@@ -80,7 +80,7 @@ export async function POST(request: Request) {
   const data = result.data;
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.ENQUIRY_TO_EMAIL ?? "thairoyalespa.stamesa@gmail.com";
+  const to = process.env.ENQUIRY_TO_EMAIL ?? "thairoyalespa.northedsa@gmail.com";
   const from = process.env.ENQUIRY_FROM_EMAIL ?? "Thai Royale Spa <onboarding@resend.dev>";
 
   if (!apiKey) {
@@ -142,7 +142,7 @@ function renderEmail(data: Validated) {
   return `<!doctype html><html><body style="margin:0;background:#EFE5CB;padding:24px;font-family:Inter,Arial,sans-serif">
   <table cellpadding="0" cellspacing="0" style="max-width:640px;margin:0 auto;background:#fff;border:1px solid #DDD0AC;border-radius:16px;overflow:hidden">
     <tr><td style="padding:28px 28px 6px">
-      <div style="font-size:24px;color:#0E1F1A;font-family:Georgia,'Times New Roman',serif;font-weight:600;letter-spacing:-0.01em;line-height:1">Thai Royale Spa <span style="color:#B89253">·</span> <span style="color:#8E6C36;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;font-family:monospace">Sta. Mesa</span></div>
+      <div style="font-size:24px;color:#0E1F1A;font-family:Georgia,'Times New Roman',serif;font-weight:600;letter-spacing:-0.01em;line-height:1">Thai Royale Spa <span style="color:#B89253">·</span> <span style="color:#8E6C36;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;font-family:monospace">North EDSA</span></div>
       <div style="margin-top:24px;color:#0E1F1A;font-size:18px;font-family:Georgia,'Times New Roman',serif;letter-spacing:-0.01em">New booking enquiry</div>
     </td></tr>
     <tr><td style="padding:8px 12px 28px"><table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:separate;border-spacing:0 4px">${rows}</table></td></tr>
