@@ -6,20 +6,28 @@ import { useEffect, useState } from "react";
 
 const SLIDES = [
   {
+    src: "/brand/branch/entrance.jpg",
+    alt: "The Thai Royale Spa entrance on North EDSA — illuminated brand mark on marble",
+  },
+  {
+    src: "/brand/branch/reception.jpg",
+    alt: "Inside the Thai Royale Spa reception — wood-panelled walls, lantern lights, daybed seating",
+  },
+  {
+    src: "/brand/branch/team.jpg",
+    alt: "The Thai Royale Spa North EDSA team — twelve therapists at the reception",
+  },
+  {
     src: "/brand/hero/1-massage-table.jpg",
     alt: "Therapist pouring warm oil onto a guest's back",
   },
   {
-    src: "/brand/hero/3-back-massage.jpg",
-    alt: "Hands resting between strokes, low warm light",
+    src: "/brand/hero/2-hot-stones.jpg",
+    alt: "Hot stones placed along the spine in a candlelit room",
   },
   {
     src: "/brand/hero/4-thai-spa-back.jpg",
     alt: "Close detail of hands during a back massage",
-  },
-  {
-    src: "/brand/hero/2-hot-stones.jpg",
-    alt: "Hot stones placed along the spine in a candlelit room",
   },
 ];
 
@@ -70,12 +78,13 @@ export function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Royal tint — multiply blend pulls the photo into brand palette */}
+      {/* Royal tint — multiply blend pulls the photo into brand palette
+          while letting warm interior tones breathe through. */}
       <div
         className="absolute inset-0 mix-blend-multiply"
         style={{
           background:
-            "linear-gradient(180deg, rgba(28,53,122,0.92) 0%, rgba(28,53,122,0.78) 35%, rgba(20,39,92,0.92) 100%)",
+            "linear-gradient(180deg, rgba(28,53,122,0.85) 0%, rgba(28,53,122,0.55) 38%, rgba(20,39,92,0.92) 100%)",
         }}
       />
 

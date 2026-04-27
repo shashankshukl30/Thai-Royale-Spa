@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
@@ -28,13 +29,31 @@ export function VisitCard() {
           transition={{ duration: 0.8, ease }}
           className="relative overflow-hidden rounded-[28px] surface-royal grain"
         >
+          {/* Reception interior as backdrop — pulls into brand palette via
+              multiply, with a darkening gradient so type stays readable. */}
+          <div className="absolute inset-0">
+            <Image
+              src="/brand/branch/reception.jpg"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-center opacity-90"
+            />
+          </div>
+          <div
+            aria-hidden
+            className="absolute inset-0 mix-blend-multiply"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(28,53,122,0.85) 0%, rgba(20,39,92,0.78) 60%, rgba(20,39,92,0.92) 100%)",
+            }}
+          />
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(80% 100% at 100% 0%, rgba(240,198,82,0.24), transparent 55%)," +
-                "radial-gradient(70% 90% at 0% 100%, rgba(20,39,92,0.55), transparent 60%)",
+                "radial-gradient(80% 100% at 100% 0%, rgba(240,198,82,0.22), transparent 55%)",
             }}
           />
 
