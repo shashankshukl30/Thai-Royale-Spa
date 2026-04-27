@@ -64,18 +64,20 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={`tel:${site.contact.phone}`}
-            onClick={() => track("tel_click", { location: "header" })}
-            className={cn(
-              "hidden sm:inline-flex items-center gap-2 text-[12.5px] font-mono uppercase tracking-[0.18em] transition-colors",
-              scrolled ? "text-ash hover:text-ink" : "text-ivory/70 hover:text-gold-soft"
-            )}
-            aria-label={`Call ${site.contact.phoneDisplay}`}
-          >
-            <Phone size={14} aria-hidden />
-            <span className="hidden md:inline">{site.contact.phoneDisplay}</span>
-          </a>
+          {site.contact.phone && (
+            <a
+              href={`tel:${site.contact.phone}`}
+              onClick={() => track("tel_click", { location: "header" })}
+              className={cn(
+                "hidden sm:inline-flex items-center gap-2 text-[12.5px] font-mono uppercase tracking-[0.18em] transition-colors",
+                scrolled ? "text-ash hover:text-ink" : "text-ivory/70 hover:text-gold-soft"
+              )}
+              aria-label={`Call ${site.contact.phoneDisplay}`}
+            >
+              <Phone size={14} aria-hidden />
+              <span className="hidden md:inline">{site.contact.phoneDisplay}</span>
+            </a>
+          )}
           <Link
             href="/visit#book"
             onClick={() => track("cta_click", { id: "header_book", location: "header" })}
@@ -139,12 +141,26 @@ export function SiteHeader() {
                 >
                   Reserve a room
                 </Link>
+                {site.contact.phone && (
+                  <a
+                    href={`tel:${site.contact.phone}`}
+                    onClick={() => track("tel_click", { location: "mobile_menu" })}
+                    className="btn btn-ghost w-full justify-center"
+                  >
+                    <Phone size={14} aria-hidden /> {site.contact.phoneDisplay}
+                  </a>
+                )}
                 <a
-                  href={`tel:${site.contact.phone}`}
-                  onClick={() => track("tel_click", { location: "mobile_menu" })}
+                  href={site.contact.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    setOpen(false);
+                    track("cta_click", { id: "mobile_menu_facebook", location: "mobile_menu" });
+                  }}
                   className="btn btn-ghost w-full justify-center"
                 >
-                  <Phone size={14} aria-hidden /> {site.contact.phoneDisplay}
+                  Message us on Facebook
                 </a>
               </div>
               <p className="mt-10 text-[12.5px] uppercase tracking-[0.22em] text-ash font-mono">

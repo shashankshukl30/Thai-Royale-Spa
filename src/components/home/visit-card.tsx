@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { site } from "@/content/site";
 import { track } from "@/lib/analytics";
@@ -9,10 +9,14 @@ import { track } from "@/lib/analytics";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export function VisitCard() {
+  const hasWhatsApp = !!site.contact.whatsapp;
+  const hasPhone = !!site.contact.phone;
   const waNumber = site.contact.whatsapp.replace(/\D/g, "");
-  const waHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(
-    `Hello — I'd like to book a session at ${site.brand.name}.`
-  )}`;
+  const waHref = hasWhatsApp
+    ? `https://wa.me/${waNumber}?text=${encodeURIComponent(
+        `Hello — I'd like to book a session at ${site.brand.name}.`
+      )}`
+    : "#";
 
   return (
     <section className="relative py-20 md:py-28">
@@ -45,28 +49,53 @@ export function VisitCard() {
               </h2>
               <p className="mt-5 max-w-lg text-[15.5px] leading-[1.75] text-ivory/80 font-light">
                 Reservations are recommended for evenings, weekends, and the
-                couples suite. WhatsApp is fastest — usually a reply within
-                fifteen minutes during open hours.
+                couples suite. The fastest way to reach us is a message on
+                Facebook — we usually reply within fifteen minutes during
+                open hours.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={waHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => track("wa_click", { location: "home_visit_card" })}
-                  className="btn btn-gold"
-                >
-                  Message on WhatsApp
-                  <ArrowUpRight size={14} className="arrow" />
-                </a>
-                <a
-                  href={`tel:${site.contact.phone}`}
-                  onClick={() => track("tel_click", { location: "home_visit_card" })}
-                  className="btn btn-ghost-light"
-                >
-                  <Phone size={14} aria-hidden /> {site.contact.phoneDisplay}
-                </a>
+                {hasWhatsApp ? (
+                  <a
+                    href={waHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track("wa_click", { location: "home_visit_card" })}
+                    className="btn btn-gold"
+                  >
+                    Message on WhatsApp
+                    <ArrowUpRight size={14} className="arrow" />
+                  </a>
+                ) : (
+                  <a
+                    href={site.contact.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      track("cta_click", { id: "home_visit_facebook", location: "home_visit_card" })
+                    }
+                    className="btn btn-gold"
+                  >
+                    <MessageCircle size={14} aria-hidden /> Message us on Facebook
+                    <ArrowUpRight size={14} className="arrow" />
+                  </a>
+                )}
+                {hasPhone ? (
+                  <a
+                    href={`tel:${site.contact.phone}`}
+                    onClick={() => track("tel_click", { location: "home_visit_card" })}
+                    className="btn btn-ghost-light"
+                  >
+                    <Phone size={14} aria-hidden /> {site.contact.phoneDisplay}
+                  </a>
+                ) : (
+                  <a
+                    href={`mailto:${site.contact.email}`}
+                    className="btn btn-ghost-light"
+                  >
+                    {site.contact.email}
+                  </a>
+                )}
               </div>
             </div>
 

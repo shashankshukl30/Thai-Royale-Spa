@@ -21,12 +21,16 @@ export const site = {
   },
 
   contact: {
-    // TODO confirm with client — placeholder uses the parent group's standard
-    // late-night number until the North EDSA branch shares its direct line.
-    whatsapp: "+639669822000",
-    whatsappDisplay: "+63 966 982 2000",
-    phone: "+639669822000",
-    phoneDisplay: "0966 982 2000",
+    // The North EDSA branch hasn't yet shared a direct phone or WhatsApp
+    // line. Empty strings here cause every phone / WhatsApp UI affordance
+    // to gracefully hide — guests are routed to Facebook + email instead.
+    // Once the client confirms the real number, populate `phone`,
+    // `phoneDisplay`, `whatsapp`, `whatsappDisplay` and the channels
+    // re-appear automatically.
+    whatsapp: "",
+    whatsappDisplay: "",
+    phone: "",
+    phoneDisplay: "",
     email: "thairoyalespa.northedsa@gmail.com", // TODO confirm with client
     facebook: "https://www.facebook.com/profile.php?id=61584876023609",
     address: {

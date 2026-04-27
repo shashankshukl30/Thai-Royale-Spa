@@ -26,14 +26,18 @@ export function SiteFooter() {
             </div>
 
             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[13.5px] text-ivory/70">
-              <a
-                href={`tel:${site.contact.phone}`}
-                onClick={() => track("tel_click", { location: "footer" })}
-                className="hover:text-gold-soft transition-colors"
-              >
-                {site.contact.phoneDisplay}
-              </a>
-              <span aria-hidden className="text-ivory/30">·</span>
+              {site.contact.phone && (
+                <>
+                  <a
+                    href={`tel:${site.contact.phone}`}
+                    onClick={() => track("tel_click", { location: "footer" })}
+                    className="hover:text-gold-soft transition-colors"
+                  >
+                    {site.contact.phoneDisplay}
+                  </a>
+                  <span aria-hidden className="text-ivory/30">·</span>
+                </>
+              )}
               <a
                 href={`mailto:${site.contact.email}`}
                 className="hover:text-gold-soft transition-colors"
