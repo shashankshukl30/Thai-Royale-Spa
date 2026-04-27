@@ -15,9 +15,9 @@ export const site = {
     tagline: "Quezon City",
     branch: "North EDSA, Quezon City",
     legalName: "Thai Royale Spa — North EDSA Quezon City Branch",
-    tagPhrase: "An hour, restored.",
+    tagPhrase: "Your haven of relaxation.",
     description:
-      "A traditional Thai spa on North EDSA, Quezon City. Therapists trained in Bangkok, oils warmed for the body, hours that meet the city after dark.",
+      "A traditional Thai spa on North EDSA, Quezon City — open around the clock. Therapists trained in Bangkok, oils warmed for the body, doors that never close.",
   },
 
   contact: {
@@ -39,14 +39,15 @@ export const site = {
       line2: "Quezon City, Metro Manila",
       country: "Philippines",
     },
-    // Hours follow the parent group standard for Metro Manila branches —
-    // confirm with client for North EDSA specifics.
+    // Confirmed via Facebook page (og:description): "Open 24/7"
     hours: {
-      label: "Daily, 2:00 PM — 2:00 AM",
-      open: "14:00",
-      close: "02:00",
-      // For JSON-LD (overnight closure handled by spec)
-      openSpec: ["Mo-Su 14:00-26:00"],
+      label: "Open 24 hours, every day",
+      labelShort: "Open 24/7",
+      open: "00:00",
+      close: "23:59",
+      isAlwaysOpen: true,
+      // For JSON-LD
+      openSpec: ["Mo-Su 00:00-23:59"],
     },
   },
 
@@ -112,7 +113,7 @@ export const site = {
   stats: [
     { value: "20+", label: "Years in practice" },
     { value: "35", label: "Branches nationwide" },
-    { value: "2 AM", label: "Last booking" },
+    { value: "24 / 7", label: "Open every hour" },
     { value: "4.1★", label: "Tripadvisor average" },
   ],
 };

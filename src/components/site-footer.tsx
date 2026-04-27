@@ -16,8 +16,8 @@ export function SiteFooter() {
           <div className="lg:col-span-5">
             <Wordmark tone="ivory" className="!text-[24px]" />
             <p className="mt-5 max-w-sm text-[15px] leading-[1.7] text-ivory/80 font-light">
-              Therapists trained in Bangkok, oils warmed for the body, hours
-              that meet the city after dark. {site.brand.branch}.
+              Therapists trained in Bangkok, oils warmed for the body, doors
+              open around the clock. {site.brand.branch}.
             </p>
 
             <div className="mt-7 flex items-center gap-3 text-[12px] uppercase font-mono tracking-[0.22em] text-gold-soft">

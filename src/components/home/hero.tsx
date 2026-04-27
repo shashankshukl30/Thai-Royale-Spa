@@ -44,8 +44,8 @@ export function Hero() {
           className="mt-6 max-w-xl text-[15px] md:text-[16.5px] leading-[1.7] text-ivory/85 font-light"
         >
           Traditional Thai therapy on North EDSA — therapists trained in
-          Bangkok, oils warmed for the body, hours that meet Quezon City
-          after work and after midnight.
+          Bangkok, oils warmed for the body, doors open around the clock.
+          Day or night, your haven of relaxation.
         </motion.p>
 
         <motion.div
@@ -78,7 +78,7 @@ export function Hero() {
           transition={{ duration: 1, ease, delay: 0.55 }}
           className="mt-14 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-4xl"
         >
-          <FactCell label="Open" value="2 PM — 2 AM" sub="Daily, including holidays" />
+          <FactCell label="Open" value="24 / 7" sub="Day or night, every day" />
           <FactCell label="Trained in" value="Bangkok" sub="Union of Thai Traditional Medicine" />
           <FactCell label="In practice" value="20 years" sub="35 branches nationwide" />
           <FactCell label="Tripadvisor" value="4.1 ★" sub="Across the group" />
