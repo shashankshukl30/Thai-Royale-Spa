@@ -44,17 +44,30 @@ export const metadata: Metadata = {
     "late night spa Manila",
     "Thai traditional massage",
   ],
+  // Social-share preview. images is what WhatsApp / iMessage / Slack /
+  // Twitter look at when a guest pastes the link. Without it the preview
+  // card is blank — kills click-through from social shares + IG bio link.
+  // Using the existing hero image already shipped in /public/brand/hero/.
   openGraph: {
     title: `${site.brand.name} — ${site.brand.branch}`,
     description: site.brand.description,
     type: "website",
     locale: "en_PH",
     siteName: site.brand.name,
+    images: [
+      {
+        url: "/brand/hero/4-thai-spa-back.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${site.brand.name} — authentic Thai massage in ${site.brand.branch}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.brand.name} — ${site.brand.branch}`,
     description: site.brand.description,
+    images: ["/brand/hero/4-thai-spa-back.jpg"],
   },
 };
 
@@ -62,6 +75,38 @@ export const viewport: Viewport = {
   themeColor: "#1c357a",
   width: "device-width",
   initialScale: 1,
+};
+
+// JSON-LD structured data — LocalBusiness schema gets the spa rich
+// snippets in Google search (address, phone, hours). Rendered inside
+// <head> (not <body>) so every audit crawler — including the third-
+// party ones that only scan head — detects it. Google parses JSON-LD
+// anywhere but head is the textbook spot.
+const jsonLdLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": "https://thairoyalespa.com/#business",
+  name: site.brand.name,
+  description: site.brand.description,
+  url: "https://thairoyalespa.com",
+  image: "https://thairoyalespa.com/brand/hero/4-thai-spa-back.jpg",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.brand.branch,
+    addressLocality: "Quezon City",
+    addressRegion: "Metro Manila",
+    addressCountry: "PH",
+  },
+};
+
+const jsonLdWebsite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: "https://thairoyalespa.com",
+  name: site.brand.name,
+  description: site.brand.description,
+  inLanguage: "en-PH",
 };
 
 export default function RootLayout({
@@ -72,6 +117,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-ivory text-ink">
         <MotionProviders>
           <SiteHeader />
